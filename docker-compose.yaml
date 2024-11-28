@@ -1,0 +1,17 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: bar_control_db
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password123
+      POSTGRES_DB: bar_control
+    volumes:
+      - postgres_data_bar_control:/var/lib/postgresql/data
+
+volumes:
+  postgres_data_bar_control:
+
